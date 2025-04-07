@@ -6,7 +6,10 @@ import json
 port = int(os.environ.get("PORT", 8080))
 app = Flask(__name__)
 app.run(debug=True, host='0.0.0.0', port=port)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+CORS(app, resources={r"/*": {"origins": [
+    "https://library-stamp-tour.vercel.app",
+    "http://localhost:5500"
+]}})
 
 FILE_PATH = "data.json"
 
