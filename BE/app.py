@@ -3,7 +3,7 @@ from flask_cors import CORS
 import os
 import json
 
-port = int(os.environ.get("PORT", 8081))
+port = int(os.environ.get("PORT", 8080))
 app = Flask(__name__)
 app.run(debug=True, host='0.0.0.0', port=port)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
@@ -124,4 +124,4 @@ def verify_stamp_code():
 
 # 서버 실행
 if __name__ == '__main__':
-    app.run(debug=True, port=8081)
+    app.run(debug=True, port=8080)
