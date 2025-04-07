@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스탬프 투어</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="input-section">
+    <input id="student-id" type="text" placeholder="학번 입력">
+    <button id="submit-id-btn">입력</button>
+  </div>
+  <div class="stamp-board">
+    <div class="stamp-row">
+      <div class="stamp" data-stamp="1">
+        <img src="https://i.postimg.cc/zfwq1ydV/0005-1.png" alt="도장1">
+      </div>
+      <div class="stamp" data-stamp="2">
+        <img src="https://i.postimg.cc/XpGm7zcV/0006-2.png" alt="도장2">
+      </div>
+      <div class="stamp" data-stamp="3">
+        <img src="https://i.postimg.cc/9r6S4YJy/0007-3.png" alt="도장3">
+      </div>
+    </div>
+    <div class="stamp-row">
+      <div class="stamp" data-stamp="4">
+        <img src="https://i.postimg.cc/k2WHWRpz/0008-4.png" alt="도장4">
+      </div>
+      <div class="stamp" data-stamp="5">
+        <img src="https://i.postimg.cc/HJHhzsGx/0009-5.png" alt="도장5">
+      </div>
+    </div>
+  </div>
+  <button id="confirm-button" class="confirm-button disabled">확인 불가</button>
+
+  <!-- 도장 팝업 -->
+  <div id="popup" class="popup">
+    <button class="close-btn" onclick="closePopup()">×</button>
+    <div class="content">
+      <div class="stamp-name" id="stamp-name">[도장 이름]</div>
+      <div class="location-info">🚩위치정보🚩</div>
+      <div class="description" id="stamp-description">부스에 대한 설명입니다.</div>
+      <div class="separator"></div>
+      <div class="input-section">
+        <input type="text" id="stamp-code" placeholder="코드 입력란">
+        <button onclick="submitCode()">입력</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 그래픽 팝업 -->
+  <div id="graphic-popup" class="graphic-popup"></div>
+
+  <!-- 직원 확인 팝업 -->
+  <div id="staff-popup" class="popup">
+    <button class="close-btn" onclick="closeStaffPopup()">×</button>
+    <div class="content">
+      <div class="description">직원 확인 코드를 입력하세요:</div>
+      <div class="input-section">
+        <input type="text" id="staff-code" placeholder="직원 코드 입력란">
+        <button onclick="submitStaffCode()">확인</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

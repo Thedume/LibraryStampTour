@@ -1,0 +1,32 @@
+{
+    "2022150039": {
+        "stampInfo": {
+            "1번": true,
+            "2번": true,
+            "3번": true,
+            "4번": true,
+            "5번": true
+        },
+        "staffCheck": true
+    },
+    "2022150037": {
+        "stampInfo": {
+            "1": true,
+            "2": false,
+            "3": true,
+            "4": false,
+            "5": true
+        },
+        "staffCheck": true
+    },
+    "2022150038": {
+        "stampInfo": {
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": false,
+            "5": false
+        },
+        "staffCheck": true
+    }
+}
