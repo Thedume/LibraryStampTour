@@ -49,7 +49,7 @@ const stampImages = {
 // 서버 통신 함수
 async function fetchStudentId(studentId) {
   try {
-    const response = await fetch('${BASE_URL}/upload', {
+    const response = await fetch(`${BASE_URL}/upload`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ async function fetchStudentId(studentId) {
 // 🔹 서버로 학번을 전송하고 stampInfo만 반환하는 함수
 async function fetchStampInfo(studentId) {
   try {
-    const response = await fetch('${BASE_URL}/upload', {
+    const response = await fetch(`${BASE_URL}/upload`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ async function updateStampInfo(studentId, stampInfo, staffCheck = null) {
   }
 
   try {
-    const response = await fetch('${BASE_URL}/update', {
+    const response = await fetch(`${BASE_URL}/update`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -233,7 +233,7 @@ async function submitCode() {
   const stampNumber = currentStamp.getAttribute('data-stamp');
   const studentId = studentIdInput.value.trim();
 
-  const response = await fetch('${BASE_URL}/verify', {
+  const response = await fetch(`${BASE_URL}/verify`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ studentId, stampNumber, code })
