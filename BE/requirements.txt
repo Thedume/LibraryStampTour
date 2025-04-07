@@ -1,3 +1,2 @@
-Flask
-openpyxl  # 엑셀 파일 저장을 위한 라이브러리
-pandas  # 엑셀 관련 다른 작업을 위한 라이브러리
+flask
+flask-cors
