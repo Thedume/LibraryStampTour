@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import os
 import json
@@ -120,6 +120,11 @@ def verify_stamp_code():
 
     return jsonify({"valid": is_valid})
 
+@app.route('/download', methods=['GET'])
+def download_data():
+    if not os.path.exists(FILE_PATH):
+        return jsonify({"error": "data.json not found"}), 404
+    return send_file(FILE_PATH, as_attachment=True)
 
 # 서버 실행
 if __name__ == '__main__':
