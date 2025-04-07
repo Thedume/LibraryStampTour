@@ -16,6 +16,7 @@ let confirmationCompleted = false; // '확인 완료' 상태를 추적
 let explorationCompleted = false; // '탐험 완료' 상태를 추적
 let staffCheckConfirmed = false;
 
+const BASE_URL = "https://librarystamptour.onrender.com";
 
 
 // 도장 코드 및 이미지 설정
@@ -48,7 +49,7 @@ const stampImages = {
 // 서버 통신 함수
 async function fetchStudentId(studentId) {
   try {
-    const response = await fetch('http://127.0.0.1:8081/upload', {
+    const response = await fetch('${BASE_URL}/upload', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,7 +69,7 @@ async function fetchStudentId(studentId) {
 // 🔹 서버로 학번을 전송하고 stampInfo만 반환하는 함수
 async function fetchStampInfo(studentId) {
   try {
-    const response = await fetch('http://127.0.0.1:8081/upload', {
+    const response = await fetch('${BASE_URL}/upload', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -112,7 +113,7 @@ async function updateStampInfo(studentId, stampInfo, staffCheck = null) {
   }
 
   try {
-    const response = await fetch('http://127.0.0.1:8081/update', {
+    const response = await fetch('${BASE_URL}/update', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -232,7 +233,7 @@ async function submitCode() {
   const stampNumber = currentStamp.getAttribute('data-stamp');
   const studentId = studentIdInput.value.trim();
 
-  const response = await fetch('http://127.0.0.1:8081/verify', {
+  const response = await fetch('${BASE_URL}/verify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ studentId, stampNumber, code })
