@@ -1,5 +1,6 @@
-# LibraryStampTour
+# LibraryStampTour -> 종료
 2025 TUK Library Stamp Tour Event
+
 2025년 한국공학대학교 도서관 스탬프 투어 이벤트용 홈페이지
 
 ------
